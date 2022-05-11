@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "mcbride-clint",
+  "classifications": [ "Common", "Console", "C#" ],
+  "identity": "ExampleTemplate.HostConsoleApp",
+  "name": "Example templates: HostConsoleApp",
+  "shortName": "hostconsoleapp",
+  "description": "A basic c# console app with Generic Hosting support with Configuration, Dependency Injection, and Logging.",
+  "defaultName": "HostConsoleApp1",
+  "sourceName": "HostConsoleApp",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
