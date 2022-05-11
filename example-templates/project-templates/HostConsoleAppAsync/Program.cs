@@ -13,21 +13,21 @@ builder.ConfigureServices((hostContext, services) =>
 
 var app = builder.Build();
 
-// Create Instance of HostConsoleApp and run it
-app.Services.GetRequiredService<HostConsoleApp>().Main(args);
+// Create Instance of HostConsoleAppAsync and run it
+await app.Services.GetRequiredService<HostConsoleAppAsync>().Main(args);
 
 // Actual Console Logic
 // Can be moved to separate file
-public class HostConsoleApp
+public class HostConsoleAppAsync
 {
-    private readonly ILogger<HostConsoleApp> _logger;
+    private readonly ILogger<HostConsoleAppAsync> _logger;
 
-    public HostConsoleApp(ILogger<HostConsoleApp> logger)
+    public HostConsoleApp(ILogger<HostConsoleAppAsync> logger)
     {
         _logger = logger;
     }
-
-    public void Main(string[] args)
+    
+    public async Task Main(string[] args)
     {
         _logger.LogInformation("Hello World!");
     }    

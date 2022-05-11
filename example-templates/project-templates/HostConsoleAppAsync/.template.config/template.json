@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "mcbride-clint",
+  "classifications": [ "Common", "Console", "C#" ],
+  "identity": "ExampleTemplate.HostConsoleAppAsync",
+  "name": "Example templates: HostConsoleAppAsync",
+  "shortName": "hostconsoleappasync",
+  "description": "A basic c# async console app with Generic Hosting support with Configuration, Dependency Injection, and Logging.",
+  "defaultName": "HostConsoleAppAsync1",
+  "sourceName": "HostConsoleAppAsync",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
