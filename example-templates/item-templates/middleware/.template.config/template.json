@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "mcbride-clint",
+  "classifications": [ "Common", "Code" ],
+  "identity": "ExampleTemplate.Middleware",
+  "name": "Example templates: middleware",
+  "shortName": "middleware",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  }
+}
