@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "mcbride-clint",
+  "classifications": [ "Template", "C#" ],
+  "identity": "ExampleTemplate.TemplatePack",
+  "name": "Example templates: TemplatePack",
+  "shortName": "templatepack",
+  "description": "A Template that contains other templates that your business can use.",
+  "defaultName": "TemplatePack1",
+  "sourceName": "TemplatePack",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
