@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "mcbride-clint",
+  "classifications": [ "Web Api", "C#" ],
+  "identity": "ExampleTemplate.TestApi",
+  "name": "Example templates: TestApi",
+  "shortName": "TestApi",
+  "description": "A Test Api template.",
+  "defaultName": "TestApi1",
+  "sourceName": "TestApi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
