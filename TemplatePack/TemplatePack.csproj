@@ -21,4 +21,10 @@
     <Compile Remove="**\*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".template.config\Icon.png" />
+    <None Include=".template.config\ide.host.json" />
+    <None Include=".template.config\template.json" />
+  </ItemGroup>
+
 </Project>
