@@ -13,6 +13,9 @@
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/mcbride-clint/TemplatePack</RepositoryUrl>
+    <AssemblyVersion>0.1.0.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include=".template.config\Icon.png" />
     <None Include=".template.config\ide.host.json" />
     <None Include=".template.config\template.json" />
