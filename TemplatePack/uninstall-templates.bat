@@ -1,1 +1,1 @@
-dotnet new --uninstall ./
+dotnet new --uninstall TemplatePack
