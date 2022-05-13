@@ -34,8 +34,4 @@
     <None Include=".template.config\template.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="project-templates\test-api\" />
-  </ItemGroup>
-
 </Project>
