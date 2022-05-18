@@ -1,11 +1,12 @@
-using CompanyApp.Application.Employees;
-using CompanyApp.Infrastructure.Persistance;
+using CompanyApp.Application;
+using CompanyApp.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<EmployeeService>();
-builder.Services.AddSingleton<IEmployeeRepository, ExampleEmployeeRepository>();
+var isProduction = builder.Environment.IsProduction();
+builder.Services.AddApplicationServices(isProduction);
+builder.Services.AddInfrastructureServices(isProduction);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
