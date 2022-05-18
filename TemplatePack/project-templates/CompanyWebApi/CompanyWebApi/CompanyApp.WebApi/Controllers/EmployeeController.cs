@@ -44,14 +44,14 @@ namespace CompanyApp.WebApi.Controllers
         }
 
         [HttpPut("{id}", Name = "UpdateEmployee")]
-        public ActionResult<Employee> Update([FromRoute ]int id, UpdateEmployeeRequest request)
+        public ActionResult<Employee> Update([FromRoute] int id, UpdateEmployeeRequest request)
         {
             var existingEmployee = _employeeService.GetEmployees(new EmployeeFilter() { Id = id }).SingleOrDefault();
             if (existingEmployee == null)
             {
                 return NotFound();
             }
-            
+
             var employee = _employeeService.UpdateEmployee(id, request);
             return Ok(employee);
         }
