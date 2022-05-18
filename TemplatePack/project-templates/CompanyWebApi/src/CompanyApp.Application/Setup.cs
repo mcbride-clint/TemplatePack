@@ -1,5 +1,6 @@
 ﻿using CompanyApp.Application.Employees;
 using Microsoft.Extensions.DependencyInjection;
+using FluentValidation;
 
 namespace CompanyApp.Application
 {
@@ -24,6 +25,7 @@ namespace CompanyApp.Application
         public static IServiceCollection AddDefaultDependencies(this IServiceCollection services)
         {
             services.AddSingleton<EmployeeService>();
+
             return services;
         }
 

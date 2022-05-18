@@ -1,5 +1,6 @@
 ﻿using CompanyApp.Application.Employees.Models;
 using CompanyApp.Domain.Models;
+using FluentValidation;
 
 namespace CompanyApp.Application.Employees
 {
@@ -20,10 +21,8 @@ namespace CompanyApp.Application.Employees
         public Employee CreateEmployee(CreateEmployeeRequest request)
         {
             // Validate Request
-            if (request == null)
-            {
-                throw new ArgumentNullException(nameof(request));
-            }
+            var validator = new CreateEmployeeRequestValidator();
+            validator.ValidateAndThrow(request);
 
             // Create Employee Model
             var newEmployee = request.ToEmployee();
@@ -35,10 +34,8 @@ namespace CompanyApp.Application.Employees
         public Employee UpdateEmployee(int id, UpdateEmployeeRequest request)
         {
             // Validate Request
-            if (request == null)
-            {
-                throw new ArgumentNullException(nameof(request));
-            }
+            var validator = new UpdateEmployeeRequestValidator();
+            validator.ValidateAndThrow(request);
 
             var existingEmployee = employeeRepo.Get(new EmployeeFilter() { Id = id }).SingleOrDefault();
 

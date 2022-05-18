@@ -1,5 +1,6 @@
-using CompanyApp.Application;
+﻿using CompanyApp.Application;
 using CompanyApp.Infrastructure;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,7 @@ var isProduction = builder.Environment.IsProduction();
 builder.Services.AddApplicationServices(isProduction);
 builder.Services.AddInfrastructureServices(isProduction);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
