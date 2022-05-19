@@ -1,4 +1,4 @@
-using CompanyApp.Application.Employees;
+﻿using CompanyApp.Application.Employees;
 using CompanyApp.Application.Employees.Models;
 using CompanyApp.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +19,8 @@ namespace CompanyApp.WebApi.Controllers
             _employeeService = employeeService;
         }
 
-        [HttpGet("query", Name = "GetEmployees")]
+        [HttpGet("", Name = "GetEmployees")]
+        [HttpGet("search", Name = "GetEmployeesAlt")]
         public ActionResult<IEnumerable<Employee>> Query([FromQuery] EmployeeFilter? filter)
         {
             return Ok(_employeeService.GetEmployees(filter));
