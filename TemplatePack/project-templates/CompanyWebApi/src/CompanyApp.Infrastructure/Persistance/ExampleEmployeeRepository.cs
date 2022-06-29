@@ -1,6 +1,7 @@
 ﻿using CompanyApp.Application.Employees;
 using CompanyApp.Application.Employees.Models;
 using CompanyApp.Domain.Models;
+using CompanyApp.Infrastructure.Persistance.InMemory;
 
 namespace CompanyApp.Infrastructure.Persistance
 {
@@ -9,23 +10,16 @@ namespace CompanyApp.Infrastructure.Persistance
     /// </summary>
     public class ExampleEmployeeRepository : IEmployeeRepository
     {
-        private readonly List<Employee> _employeeList = new();
-        public ExampleEmployeeRepository()
+        private readonly InMemoryEmployeeDataStore _inMemoryEmployeeData;
+
+        public ExampleEmployeeRepository(InMemoryEmployeeDataStore inMemoryEmployeeData)
         {
-            // Populate Employee List with Default Entries            
-            if (_employeeList.Count == 0)
-            {
-                _employeeList.Add(new Employee() { Id = _employeeList.Count, FirstName = "John", LastName = "Smith", Email = "john.smith@gmail.com", PhoneNumber = "1234567890", HireDate = DateTime.Now.AddYears(-5).AddMonths(2) });
-                _employeeList.Add(new Employee() { Id = _employeeList.Count, FirstName = "Will", LastName = "Smith", Email = "will.smith@gmail.com", PhoneNumber = "1234567891", HireDate = DateTime.Now.AddYears(-4).AddMonths(-3) });
-                _employeeList.Add(new Employee() { Id = _employeeList.Count, FirstName = "Will", LastName = "Nike", Email = "will.nike@gmail.com", PhoneNumber = "1234567892", HireDate = DateTime.Now.AddYears(-3).AddMonths(1), TerminationDate = DateTime.Now.AddMonths(-3) });
-                _employeeList.Add(new Employee() { Id = _employeeList.Count, FirstName = "William", LastName = "Jones", Email = "john.smith@gmail.com", PhoneNumber = "1234567893", HireDate = DateTime.Now.AddYears(-2).AddMonths(-2) });
-                _employeeList.Add(new Employee() { Id = _employeeList.Count, FirstName = "Kevin", LastName = "Smith", Email = "kevin.smith@gmail.com", PhoneNumber = "1234567894", HireDate = DateTime.Now.AddYears(-1).AddMonths(5) });
-            }
+            _inMemoryEmployeeData = inMemoryEmployeeData;
         }
 
         public IEnumerable<Employee> Get(EmployeeFilter? filter)
         {
-            IEnumerable<Employee> result = _employeeList;
+            IEnumerable<Employee> result = _inMemoryEmployeeData.Employees;
 
             if (filter != null)
             {
@@ -64,20 +58,20 @@ namespace CompanyApp.Infrastructure.Persistance
 
         public Employee Create(Employee employee)
         {
-            employee.Id = _employeeList.Count;
-            _employeeList.Add(employee);
+            employee.Id = _inMemoryEmployeeData.Employees.Count;
+            _inMemoryEmployeeData.Employees.Add(employee);
 
             return employee;
         }
 
         public Employee Update(Employee employee)
         {
-            var existingEmployee = _employeeList.SingleOrDefault(e => e.Id == employee.Id);
+            var existingEmployee = _inMemoryEmployeeData.Employees.SingleOrDefault(e => e.Id == employee.Id);
 
             if (existingEmployee is not null)
             {
-                _employeeList.Remove(existingEmployee);
-                _employeeList.Add(employee);
+                _inMemoryEmployeeData.Employees.Remove(existingEmployee);
+                _inMemoryEmployeeData.Employees.Add(employee);
                 return employee;
             }
 
@@ -86,11 +80,11 @@ namespace CompanyApp.Infrastructure.Persistance
 
         public int Delete(int id)
         {
-            var existingEmployee = _employeeList.SingleOrDefault(e => e.Id == id);
+            var existingEmployee = _inMemoryEmployeeData.Employees.SingleOrDefault(e => e.Id == id);
 
             if (existingEmployee is not null)
             {
-                _employeeList.Remove(existingEmployee);
+                _inMemoryEmployeeData.Employees.Remove(existingEmployee);
                 return 1;
             }
 

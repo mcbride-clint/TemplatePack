@@ -1,5 +1,6 @@
 ﻿using CompanyApp.Application.Employees;
 using CompanyApp.Infrastructure.Persistance;
+using CompanyApp.Infrastructure.Persistance.InMemory;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CompanyApp.Infrastructure
@@ -24,7 +25,7 @@ namespace CompanyApp.Infrastructure
 
         public static IServiceCollection AddDefaultDependencies(this IServiceCollection services)
         {
-            services.AddSingleton<IEmployeeRepository, ExampleEmployeeRepository>();
+            services.AddScoped<IEmployeeRepository, ExampleEmployeeRepository>();
             return services;
         }
 
@@ -35,6 +36,8 @@ namespace CompanyApp.Infrastructure
 
         public static IServiceCollection AddDevelopmentDependencies(this IServiceCollection services)
         {
+            services.AddSingleton<InMemoryEmployeeDataStore>();
+
             return services;
         }
     }

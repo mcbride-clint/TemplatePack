@@ -24,7 +24,7 @@ namespace CompanyApp.Application
 
         public static IServiceCollection AddDefaultDependencies(this IServiceCollection services)
         {
-            services.AddSingleton<EmployeeService>();
+            services.AddScoped<EmployeeService>();
 
             return services;
         }
