@@ -2,6 +2,7 @@
 using CompanyApp.Infrastructure;
 using FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,13 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "CompanyApp API", Version = "v1" });
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "CompanyApp.WebApi.xml"));
 });
+
+// Configure Logging
+builder.Logging.AddSerilog(new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .MinimumLevel.Information()
+    .WriteTo.Console()
+    .CreateLogger());
 
 var app = builder.Build();
 
