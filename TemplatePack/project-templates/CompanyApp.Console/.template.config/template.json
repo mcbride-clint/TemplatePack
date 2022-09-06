@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "mcbride-clint",
+  "classifications": [ "Template", "C#", "Web", "API" ],
+  "identity": "CompanyApp.WebApi.TemplatePack",
+  "name": "Example API template",
+  "shortName": "CompanyWebApi",
+  "description": "A Ready to use Web API Project. Solution projects are divided into API, Application, Domain, and Infrastructure.",
+  "defaultName": "CompanyApp.WebApi1",
+  "sourceName": "CompanyApp",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
