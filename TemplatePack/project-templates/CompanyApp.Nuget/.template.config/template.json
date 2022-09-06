@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "mcbride-clint",
+  "classifications": [ "Template", "C#", "Web", "Library" ],
+  "identity": "CompanyApp.Nuget.TemplatePack",
+  "name": "Example Nuget template",
+  "shortName": "CompanyNuget",
+  "description": "Project setup with pipelines for deploying to Source Control.",
+  "defaultName": "CompanyApp.Nuget",
+  "sourceName": "CompanyApp",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
