@@ -1,12 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/template.json",
   "author": "mcbride-clint",
-  "classifications": [ "Template", "C#", "Web", "API" ],
-  "identity": "CompanyApp.WebApi.TemplatePack",
-  "name": "Example API template",
-  "shortName": "CompanyWebApi",
-  "description": "A Ready to use Web API Project. Solution projects are divided into API, Application, Domain, and Infrastructure.",
-  "defaultName": "CompanyApp.WebApi1",
+  "classifications": [ "Template", "C#", "Web", "Console" ],
+  "identity": "CompanyApp.ConsoleApp.TemplatePack",
+  "name": "Example Console App template",
+  "shortName": "CompanyConsoleApp",
+  "description": "A Ready to use Console App Project. Console App set up for Dependency Injection and Logging.",
+  "defaultName": "CompanyApp.Console1",
   "sourceName": "CompanyApp",
   "tags": {
     "language": "C#",
