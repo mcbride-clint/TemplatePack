@@ -15,7 +15,7 @@
     <ContentTargetFolders>content</ContentTargetFolders>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/mcbride-clint/TemplatePack</RepositoryUrl>
-    <AssemblyVersion>0.1.0.1</AssemblyVersion>
+    <AssemblyVersion>0.1.0.2</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

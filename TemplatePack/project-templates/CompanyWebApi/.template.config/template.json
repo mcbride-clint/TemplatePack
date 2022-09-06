@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "mcbride-clint",
+  "classifications": [ "Template", "C#", "Web", "API" ],
+  "identity": "CompanyApp.TemplatePack",
+  "name": "Example API template",
+  "shortName": "CompanyWebApi",
+  "description": "A Ready to use Web API Project.",
+  "defaultName": "CompanyApp1",
+  "sourceName": "CompanyApp",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
