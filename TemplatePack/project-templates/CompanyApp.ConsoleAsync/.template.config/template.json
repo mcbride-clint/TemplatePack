@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "mcbride-clint",
+  "classifications": [ "Template", "C#", "Web", "Console" ],
+  "identity": "CompanyApp.ConsoleAppAsync.TemplatePack",
+  "name": "Example Async Console App template",
+  "shortName": "CompanyConsoleAppAsync",
+  "description": "A Ready to use Async Console App Project. Console App set up for Dependency Injection and Logging.",
+  "defaultName": "CompanyApp.Console1",
+  "sourceName": "CompanyApp",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
